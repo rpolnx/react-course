@@ -1,0 +1,13 @@
+Dependency Management:
+    - Npm or yarn
+
+Bundler:
+    - Webpack
+
+Compiler (Next-Gen JavaScript)
+    - Babel + Presets
+
+Development Server (Webserver)
+
+=== Create React App ===
+ - Creates a initial React Project
