@@ -1,0 +1,49 @@
+=== Interceptors ===
+
+import axios from 'axios';
+
+Example: create a interceptor com Index.js 
+--> Before code:
+
+=> For request:
+
+axios.interceptors.request.use(config);
+
+axios.interceptors.request.use( request => {
+    console.log(request);
+    return request; // always need to return the request or else it will block
+}, error => {
+    console.log(error);
+    return Promisse.reject(error);
+})
+
+=> For response:
+
+axios.interceptors.response.use(config);
+axios.interceptors.response.use( request => {
+    console.log(request);
+    return request; // always need to return the request or else it will block
+}, error => {
+    console.log(error);
+    return Promisse.reject(error);
+})
+
+
+=== Default Configurations ===
+
+axios.defaults.baseURL = 'https://somewhere.com';
+axios.defaults.headers.common['Authorization'] = 'AUTH TOKEN'; // For all requests
+axios.defaults.headers.post['Content-Type'] = 'application/json'; // Only for Post, for example
+
+
+=== OBJ Configuration ===
+-- Import separated files where you need!
+const instance = axios.create({
+    baseURL: 'https://'
+})
+
+instance.defaults.headers.common['Authorization'] = 'AUTH TOKEN FROM WHERE';
+
+export default instance;
+
+// Do not import 'axios', but the instance from where you create your file.

@@ -12,21 +12,18 @@ const App = props => {
       { name: 'Manu', age: 29 },
       { name: 'Stephanie', age: 26 }
     ],
-    otherState: 'some other value'
+    otherState: 'some other value',
+    showPersons: false
   });
 
   //An elegant way is to define a variable const if you don't want to change it and don't want to be mutated
 
-  const switchNameHandler = (newName) => {
-    console.log('Was clicked!');
-    // This do not merge params with the passed one!!!
+  const deleteNameHandler = (personIndex) => {
+    const persons = personsState.persons;
     setPersonsState({
-      persons: [
-        { name: newName, age: 28 },
-        { name: 'Manuela', age: 29 },
-        { name: 'Stephanie', age: 26 }
-      ],
-      otherState: personsState.otherState
+      persons: persons.splice(personIndex, 1),
+      otherState: personsState.otherState,
+      showPersons: personsState.showPersons
     });
   }
 
@@ -40,15 +37,31 @@ const App = props => {
     });
   }
 
+  const togglePersonsHandler = () => {
+    const doesShow = personsState.showPersons;
+    setPersonsState({ persons: personsState.persons, otherState: personsState.otherState, showPersons: !personsState.showPersons })
+  }
+
+  const style = {
+    backgroundColor: 'white',
+    font: 'inherit',
+    border: '1px solid blue',
+    padding: '8px',
+    cursor: 'pointer'
+  }
+
+  let personsShow = null;
+
+  personsShow = personsState.showPersons ?
+    <div>
+      {personsState.persons.map((person, index) => <Person name={person.name} age={person.age} click={deleteNameHandler(index)} />)}
+    </div> : null
+
   return (
     <div className="App">
       <h1>Hi!</h1>
-      <button onClick={switchNameHandler.bind(this, "Maxs")}>Switch Name</button>
-      <Person name={personsState.persons[0].name} age={personsState.persons[0].age} />
-      <Person name={personsState.persons[1].name} age={personsState.persons[1].age} click={switchNameHandler.bind(this, "Julia")}
-        changed={nameChangeHandler}>
-        My hobbies: Racing</Person>
-      <Person name={personsState.persons[2].name} age={personsState.persons[2].age} />
+      <button onClick={togglePersonsHandler.bind(this)} style={style}>Show Persons</button>
+      {personsShow}
     </div>
   );
 }

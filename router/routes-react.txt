@@ -1,0 +1,14 @@
+=== Remember ===
+
+-> BrowserRoute to define the routes
+-> Route to define the path to go to
+-> Link to switch where to, but without reload all pages
+
+
+Relative paths:
+
+<Link to={{
+    pathname: this.props.match.url + 'new-post', //this will be relative path
+    hash: '#submit',
+    search: '?quick-submit=true'
+}}> New Post </Link>
