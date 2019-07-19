@@ -3,7 +3,9 @@ div div span {
     background: rgba(0,0,0,0.5);
     color: white;
     margin-left: 20px;
-    user-select: none;    
+    user-select: none;
+    display: inline-block;
+    width: 50px;    
 }
 
 .div-formal {

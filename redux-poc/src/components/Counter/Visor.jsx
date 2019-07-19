@@ -5,7 +5,6 @@ const Visor = props => {
   const { current } = props;
   return (
     <>
-      <h1>Counter with Redux</h1>
       <h1 style={{ color: "blue", fontSize: "50px" }}>{current}</h1>
     </>
   );

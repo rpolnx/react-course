@@ -5,6 +5,7 @@ import Visor from "./Visor";
 const Counter = () => {
   return (
     <>
+      <h1>Counter with Redux</h1>
       <Visor />
       <Panel />
     </>
