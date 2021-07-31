@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 export class Contact extends React.Component {
     render() {
+        console.log(this.props.match.url)
         return (
             <div>
                 <p>Contact</p>
