@@ -8,7 +8,7 @@ const DUMMY = [
   { id: "q2", author: "Author 2", text: "Learning React is great!" },
 ];
 
-export const QuoteDetails = () => {
+const QuoteDetails = () => {
   const params = useParams();
   const match = useRouteMatch();
 
@@ -37,3 +37,5 @@ export const QuoteDetails = () => {
     </>
   );
 };
+
+export default QuoteDetails

@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Layout.module.css";
 import MainNavigation from "./MainNavigation";
 
-export const Layout = (props) => {
+const Layout = (props) => {
   return (
     <>
       <MainNavigation />
@@ -10,3 +10,5 @@ export const Layout = (props) => {
     </>
   );
 };
+
+export default Layout

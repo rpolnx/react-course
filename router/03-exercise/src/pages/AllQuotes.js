@@ -6,10 +6,12 @@ const DUMMY = [
   { id: "q2", author: "Author 2", text: "Learning React is great!" },
 ];
 
-export const AllQuotes = () => {
+const AllQuotes = () => {
   return (
     <>
       <QuoteList quotes={DUMMY} />
     </>
   );
 };
+
+export default AllQuotes

@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import QuoteForm from "../components/quotes/QuoteForm";
 
-export const NewQuote = () => {
+const NewQuote = () => {
   const history = useHistory();
 
   const addQuoteHandler = (quoteData) => {
@@ -15,3 +15,5 @@ export const NewQuote = () => {
     </>
   );
 };
+
+export default NewQuote;
